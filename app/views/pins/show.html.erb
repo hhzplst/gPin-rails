@@ -1,0 +1,14 @@
+<%= render "navbar" %>
+
+<div class="col-md-4 col-md-offset-4">
+  <div class="jumbotron text-center">
+    <img src="<%= @pin.img %>" width ="250px" height="300px"/>
+    <hr>
+    <p>"<em><%= @pin.comment %></em>"</p>
+    Found on <a href="<%= @pin.url %>"> <%= @pin.url.split("/")[2]%></a>    
+  </div>
+  <div class="text-center">    
+  <a href="/pins/<%= @pin.id %>/edit"><button class="btn btn-info">Edit this Pin</button></a><br><br>
+  <%= link_to "Delete this Pin", @pin, method: :delete, data: {confirm: "Are you sure?"} %>
+  </div>
+</div>

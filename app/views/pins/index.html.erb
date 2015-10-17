@@ -1,0 +1,11 @@
+<%= render "navbar" %>
+<% @pins.each do |pin| %>
+<div class="col-md-4">
+  <div class="jumbotron text-center">
+    <a href="/pins/<%= pin.id %>"><img src="<%= pin.img %>" width ="250px" height="300px"/></a>
+    <hr>
+    <p>"<em><%= pin.comment %></em>"</p>
+    Found on <a href="<%= pin.url %>"> <%= pin.url.split("/")[2]%></a>    
+  </div>
+</div>
+<% end %>
